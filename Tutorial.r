@@ -1,5 +1,6 @@
 #Universidade federal de minas gerais
 #William Giani Duani Martins
+#_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,_
 
 # importing libraries and a dataset
 require(dplyr)
@@ -9,14 +10,16 @@ dados <- read.csv2("https://pastebin.com/raw/Pxi5p3Ap", header=T)
 # cleaning some values
 dados <- dados[1:4,1:2]
 
+# doing the required combinations
 combinations <- combn(c(1:4),2)
 combinations
 
+# creating some auxiliary vectors
 int <- c()
 inc <- c()
 pesos <- c()
 
-# Calculating all possible regressions
+# calculating all possible regressions
 for(i in 1:6){
   y <- rbind(dados[combinations[,i][1],][1],dados[combinations[,i][2],][1]) %>% as.matrix()
   x <- cbind(c(1,1), rbind(dados[combinations[,i][1],][2],dados[combinations[,i][2],][2])) %>% as.matrix()
@@ -38,7 +41,6 @@ colnames(tabelaAuxiliarConvertida) <- c("int","inc","distancia","pesoacum")
 # extracting the median
 filter(tabelaAuxiliarConvertida, pesoacum>0.5)[1,]
 beta1 <- filter(tabelaAuxiliarConvertida, pesoacum>0.5)[1,2]
-
 
 # calculating all betas0
 betas0 <- c()

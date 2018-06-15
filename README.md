@@ -1,2 +1,2 @@
 # Rank-Regression
-Passo a passo no R
+Step-by-step tutorial in R.

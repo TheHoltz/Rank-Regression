@@ -1,2 +1,3 @@
-# Rank-Regression
-Step-by-step tutorial in R.
+# Base Algorithm
+![](https://i.imgur.com/kAbMtDS.png)
+
